@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="cordova-plugin-eyc-device">
+    id="cordova-plugin-device">
     <name>Device</name>
     <description>Cordova Device Plugin</description>
     <license>Apache 2.0</license>
@@ -13,14 +13,26 @@
 
     <!-- android -->
     <platform name="android">
-        <!--<config-file target="res/xml/config.xml" parent="/*">
+        <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Device" >
                 <param name="android-package" value="org.apache.cordova.device.Device"/>
             </feature>
-        </config-file>-->
-
+        </config-file>
+        
         <source-file src="src/android/Device.java" target-dir="src/org/apache/cordova/device" />
     </platform>
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Device">
+                <param name="ios-package" value="CDVDevice"/>
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/CDVDevice.h" />
+        <source-file src="src/ios/CDVDevice.m" />
+    </platform>
+    
 
    
 

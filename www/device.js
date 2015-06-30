@@ -36,6 +36,9 @@ channel.waitForInitialization('onCordovaInfoReady');
  */
 function Device() {
     this.available = false;
+    //This is added by SEYC
+    this.display = null;
+    //This is added by SEYC
     this.platform = null;
     this.version = null;
     this.uuid = null;
@@ -51,6 +54,9 @@ function Device() {
             //TODO: CB-5105 native implementations should not return info.cordova
             var buildLabel = cordova.version;
             me.available = true;
+            //This is added by SEYC
+            me.display = info.display;
+            //This is added by SEYC
             me.platform = info.platform;
             me.version = info.version;
             me.uuid = info.uuid;
